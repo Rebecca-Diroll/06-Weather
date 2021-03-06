@@ -1,0 +1,15 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header {
+    background-color: darkslategray;
+    color: whitesmoke;
+}
+
+h1 {
+    display: grid;
+    justify-content: center;
+    padding: 10px;
+}
