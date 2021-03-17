@@ -140,8 +140,6 @@ var day5TempLow = document.querySelector("#day5TempLow");
 var day5TempHigh = document.querySelector("#day5TempHigh");
 var day5Humidity = document.querySelector("#day5Humidity");
 
-
-
 // Retrieve 5-day forcast using lattitude and longitude from current weather data
 function fiveDayForcast() {
     fetch("http://api.openweathermap.org/data/2.5/onecall?lat=" + lat.innerHTML + "&lon=" + lon.innerHTML 
