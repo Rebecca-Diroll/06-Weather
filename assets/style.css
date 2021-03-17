@@ -3,13 +3,169 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 header {
-    background-color: darkslategray;
+    display: flex;
+    background-color: navy;
     color: whitesmoke;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 10px;
+    margin-top: 10px;
 }
 
 h1 {
-    display: grid;
     justify-content: center;
     padding: 10px;
+}
+
+.citySearchContainer {grid-area: citySearchContainer;}
+.weatherTodaycontainer {grid-area: weatherTodayContainer;}
+
+.topContainer {
+    display: grid;
+    grid-template-areas:
+        "citySearchContainer weatherTodayContainer"
+}
+
+.topContainer {
+    diplay: flex;
+    align-items: stretch;
+    background-color: lightblue;
+    flex-direction: row;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.topContainer > div {
+    background-color: whitesmoke;
+    color: darkblue;
+    margin: 10px;
+    padding: 10px;
+    text-align: left;
+    border-radius: 10px;
+}
+
+.citySearchContainer {
+    display: grid;
+    background-color: lightblue;
+    color: mediumblue;
+    justify-content: left;
+}
+
+.saveBtn {
+    align-self: auto;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.savedCities {
+    list-style-type: none;
+}
+
+.button {
+    padding-bottom: 10px;
+}
+
+.searchIcon {
+    font-weight: 900;
+}
+
+.weatherTodaycontainer {
+    justify-content: right;
+}
+
+.inputCityName {
+    font-size: 1.2em;
+    border: 2px solid navy;
+    border-radius: 5px;
+}
+
+.uviToday {
+    color: whitesmoke;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.favorable {
+    background-color: green;
+    color: whitesmoke;
+}
+
+.moderate {
+    background-color: yellow;
+    color: navy;
+}
+
+.high {
+    background-color: orange;
+    color: whitesmoke;
+}
+
+.extreme {
+    background-color: red;
+    color: whitesmoke;
+}
+
+.fiveDayForcastContainer {
+    background-color: lightblue;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.fiveDayForcast {
+    margin: 10px 10px 10px 15px;
+    padding-top: 10px;
+    color: navy;
+}
+
+.day1Box {grid-area: day1Box;}
+.day2Box {grid-area: day2Box;}
+.day3Box {grid-area: day3Box;}
+.day4Box {grid-area: day4Box;}
+.day5Box {grid-area: day5Box;}
+
+.fiveDayRow {
+    display: grid;
+    grid-template-areas:
+        "day1Box day2Box day3Box day4Box day5Box"
+}
+
+.day1Box, .day2Box, .day3Box, .day4Box, .day5Box {
+    background-color: mediumblue;
+    color: whitesmoke;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    line-height: 1.2;
+}
+
+.icon, .icon1, .icon2, .icon3, .icon4, .icon5 {
+    line-height: 1;
+}
+
+.tempTodayFahrenheit, .humidityToday, .windSpeedToday, .dayDate,
+.day1TempLow, .day1TempHigh, .day1Humidity
+.day2TempLow, .day2TempHigh, .day2Humidity
+.day3TempLow, .day3TempHigh, .day3Humidity
+.day4TempLow, .day4TempHigh, .day4Humidity
+.day5TempLow, .day5TempHigh, .day5Humidity {
+    line-height: 2;
+}
+
+.day1Date, .day2Date, .day3Date, .day4Date, .day5Date, 
+.searchCity, .outputCityName, .fiveDayForcast {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.hide {
+    display: none;
 }
