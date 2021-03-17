@@ -15,6 +15,24 @@ var lon = document.querySelector("#lon");
 var dateToday = moment();
 $("#dateToday").text(dateToday.format("ddd, MMM Do, YYYY"));
 
+// City Search
+function cityList (cityName) {
+    var cityListName = document.createElement("li");
+
+    var button1 = document.createElement("button");
+    button1.textContent = cityName;
+    button1.setAttribute("class", "list-number");
+
+    cityListName.append(button1);
+    savedCities.append(cityListName);
+
+    // Add a delete button
+    var del = document.createElement("button");
+    del.textContent = "❌";
+
+    button1.appendChild(del);
+}
+
 // City list variables
 var cityNameForm = document.querySelector("#city-name-form");
 var cityNameList = document.querySelector("#city-name-list");
