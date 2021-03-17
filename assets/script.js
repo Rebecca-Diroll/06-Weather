@@ -29,6 +29,7 @@ function cityList (cityName) {
     // Add a delete button
     var del = document.createElement("button");
     del.textContent = "❌";
+    del.setAttribute("class", "delete");
 
     button1.appendChild(del);
 }
@@ -42,6 +43,12 @@ $(document).on("click", ".list-number", function(event) {
 
 //    clickableButtons(saveCityName);  // Try this
 });
+
+// Function for list button delete
+$(document).on("click", ".delete", function(event) {
+    event.preventDefault();
+    $(this).parent().remove();
+})
 
 // Function for save button event
 $(document).on("click", "#saveBtn", function(event) {
