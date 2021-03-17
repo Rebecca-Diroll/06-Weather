@@ -67,12 +67,12 @@ h1 {
     list-style-type: none;
 }
 
-.button {
-    padding-bottom: 10px;
-}
-
 .searchIcon {
     font-weight: 900;
+}
+
+button {
+    margin-left: 10px;
 }
 
 .weatherTodaycontainer {
