@@ -53,7 +53,52 @@ $(document).on("click", "#saveBtn", function(event) {
     clickableButtons(saveCityName);
 });
 
+// Current weather function
+function clickableButtons(inputCityName) {
+    console.log(this);
+    weatherTodayContainer.classList.remove("hide");
+    bottomContainer.classList.remove("hide");
 
+    cityList(inputCityName);
+
+    fetch("http://api.openweathermap.org/data/2.5/weather?q=" + inputCityName + "&units=imperial" +
+    "&appid=4d1228d2ed522b3f07e3a4edabc0402c")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            
+            var cityNameValue = data["name"];
+            var descriptionValue = data["weather"][0]["description"];
+            var iconValue = data["weather"][0]["icon"]
+            var tempValueFahrenheit = data["main"]["temp"];
+            var humidityValue = data["main"]["humidity"]
+            var windSpeedValue = data["wind"]["speed"]
+
+            var latValue = data["coord"]["lat"];
+            var lonValue = data["coord"]["lon"];
+
+            outputCityName.innerHTML = cityNameValue;
+            descriptionToday.innerHTML = descriptionValue;
+            tempTodayFahrenheit.innerHTML = tempValueFahrenheit + " deg F";
+            humidityToday.innerHTML = humidityValue + "% humidity";
+            windSpeedToday.innerHTML = windSpeedValue + " mph wind";
+            lat.innerHTML = latValue;
+            lon.innerHTML = lonValue;
+
+            var dateString = data["dt"];
+            var dayDate = new Date(parseInt(dateString)*1000);
+            console.log(dayDate);
+
+            // Weather Icons
+            var iconurl = "http://openweathermap.org/img/w/" + iconValue + ".png";
+            $('#wicon').attr('src', iconurl);
+
+            // 5-Day Forcast
+            fiveDayForcast();
+
+//            document.querySelector("#inputCityName").textContent = "";
+        });
+}
 
 // City list variables
 var cityNameForm = document.querySelector("#city-name-form");
