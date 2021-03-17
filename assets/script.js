@@ -33,6 +33,28 @@ function cityList (cityName) {
     button1.appendChild(del);
 }
 
+// Function for list button event
+$(document).on("click", ".list-number", function(event) {
+    event.preventDefault();
+    console.log(event.target.textContent);
+
+//    var saveCityName = $(event.target.textContent).text(); // Try this.
+
+//    clickableButtons(saveCityName);  // Try this
+});
+
+// Function for save button event
+$(document).on("click", "#saveBtn", function(event) {
+    event.preventDefault();
+    console.log($("#inputCityName").val());
+
+    var saveCityName = $("#inputCityName").val();
+
+    clickableButtons(saveCityName);
+});
+
+
+
 // City list variables
 var cityNameForm = document.querySelector("#city-name-form");
 var cityNameList = document.querySelector("#city-name-list");
