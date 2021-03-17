@@ -85,6 +85,11 @@ button {
     border-radius: 5px;
 }
 
+.list-number {
+    margin-bottom: 10px;
+    padding-right: 2px;
+}
+
 .uviToday {
     color: whitesmoke;
     border-radius: 5px;
