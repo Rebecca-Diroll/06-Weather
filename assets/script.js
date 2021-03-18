@@ -10,6 +10,7 @@ var windSpeedToday = document.querySelector("#windSpeedToday");
 var savedCities = document.querySelector("#savedCities");
 var lat = document.querySelector("#lat");
 var lon = document.querySelector("#lon");
+var button1;
 
 // Today's date
 var dateToday = moment();
@@ -26,26 +27,35 @@ function cityList (cityName) {
     cityListName.append(button1);
     savedCities.append(cityListName);
 
-    // Add a delete button
-    var del = document.createElement("button");
-    del.textContent = "❌";
-    del.setAttribute("class", "delete");
+    // var delButton = document.createElement("button");
+    // delButton.textContent = "❌";
+    // delButton.setAttribute("class", "delete");
 
-    button1.appendChild(del);
+    // $("button1").after("❌");
+
+//    button1.appendChild(delButton); This works, but...
 }
 
-// Function for list button event
+// // Add delete button
+// function addDelBtn(button1) {
+//     console.log(button1);
+//     var delButton = document.createElement("button");
+//     delButton.textContent = "❌";
+//     delButton.setAttribute("class", "delete");
+//     button1.appendChild(delButton);
+// };
+
+// Function for list button click event
 $(document).on("click", ".list-number", function(event) {
     event.preventDefault();
     console.log(event.target.textContent);
 
-//    var saveCityName = $(event.target.textContent).text(); // Try this.
-
-//    clickableButtons(saveCityName);  // Try this
+    var recallCity = event.target.textContent;
+    clickableButtons(recallCity);
 });
 
 // Function for list button delete
-$(document).on("click", ".delete", function(event) {
+$(document).on("click", "#delete", function(event) {
     event.preventDefault();
     $(this).parent().remove();
 })
@@ -58,6 +68,8 @@ $(document).on("click", "#saveBtn", function(event) {
     var saveCityName = $("#inputCityName").val();
 
     clickableButtons(saveCityName);
+
+    cityList(saveCityName);
 });
 
 // Current weather function
@@ -66,8 +78,7 @@ function clickableButtons(inputCityName) {
     weatherTodayContainer.classList.remove("hide");
     bottomContainer.classList.remove("hide");
 
-    cityList(inputCityName);
-
+//    cityList(inputCityName);
     fetch("http://api.openweathermap.org/data/2.5/weather?q=" + inputCityName + "&units=imperial" +
     "&appid=4d1228d2ed522b3f07e3a4edabc0402c")
         .then(response => response.json())
