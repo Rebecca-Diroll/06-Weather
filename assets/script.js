@@ -160,7 +160,7 @@ var day5Humidity = document.querySelector("#day5Humidity");
 
 // Retrieve 5-day forcast using lattitude and longitude from current weather data
 function fiveDayForcast() {
-    fetch("http://api.openweathermap.org/data/2.5/onecall?lat=" + lat.innerHTML + "&lon=" + lon.innerHTML 
+    fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat.innerHTML + "&lon=" + lon.innerHTML 
     + "&exclude=current,minutely,hourly,alerts" + "&units=imperial" 
     + "&appid=4d1228d2ed522b3f07e3a4edabc0402c")
         .then(response => response.json())
@@ -215,7 +215,7 @@ function fiveDayForcast() {
             document.querySelector("#day1DateFormat").innerHTML = day1DateFormat;
 
             // Day 1 Weather
-            var icon1url = "http://openweathermap.org/img/w/" + icon1Value + ".png";
+            var icon1url = "https://openweathermap.org/img/w/" + icon1Value + ".png";
             $('#wicon1').attr('src', icon1url);
             day1Icon.innerHTML = icon1Value;
 
@@ -239,7 +239,7 @@ function fiveDayForcast() {
             document.querySelector("#day2DateFormat").innerHTML = day2DateFormat;
 
             // Day 2 Weather
-            var icon2url = "http://openweathermap.org/img/w/" + icon2Value + ".png";
+            var icon2url = "https://openweathermap.org/img/w/" + icon2Value + ".png";
             $('#wicon2').attr('src', icon2url);
             day2Icon.innerHTML = icon2Value;
 
@@ -263,7 +263,7 @@ function fiveDayForcast() {
             document.querySelector("#day3DateFormat").innerHTML = day3DateFormat;            
 
             // Day 3 Weather
-            var icon3url = "http://openweathermap.org/img/w/" + icon3Value + ".png";
+            var icon3url = "https://openweathermap.org/img/w/" + icon3Value + ".png";
             $('#wicon3').attr('src', icon3url);
             day3Icon.innerHTML = icon3Value;
 
@@ -287,7 +287,7 @@ function fiveDayForcast() {
             document.querySelector("#day4DateFormat").innerHTML = day4DateFormat;    
 
             // Day 4 Weather
-            var icon4url = "http://openweathermap.org/img/w/" + icon4Value + ".png";
+            var icon4url = "https://openweathermap.org/img/w/" + icon4Value + ".png";
             $('#wicon4').attr('src', icon4url);
             day4Icon.innerHTML = icon4Value;
 
@@ -311,7 +311,7 @@ function fiveDayForcast() {
             document.querySelector("#day5DateFormat").innerHTML = day5DateFormat;    
 
             // Day 5 Weather
-            var icon5url = "http://openweathermap.org/img/w/" + icon5Value + ".png";
+            var icon5url = "https://openweathermap.org/img/w/" + icon5Value + ".png";
             $('#wicon5').attr('src', icon5url);
             day5Icon.innerHTML = icon4Value;
 
