@@ -79,7 +79,7 @@ function clickableButtons(inputCityName) {
     bottomContainer.classList.remove("hide");
 
 //    cityList(inputCityName);
-    fetch("http://api.openweathermap.org/data/2.5/weather?q=" + inputCityName + "&units=imperial" +
+    fetch("https://api.openweathermap.org/data/2.5/weather?q=" + inputCityName + "&units=imperial" +
     "&appid=4d1228d2ed522b3f07e3a4edabc0402c")
         .then(response => response.json())
         .then(data => {
