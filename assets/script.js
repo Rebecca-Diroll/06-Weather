@@ -108,7 +108,7 @@ function clickableButtons(inputCityName) {
             console.log(dayDate);
 
             // Weather Icons
-            var iconurl = "http://openweathermap.org/img/w/" + iconValue + ".png";
+            var iconurl = "https://openweathermap.org/img/w/" + iconValue + ".png";
             $('#wicon').attr('src', iconurl);
 
             // 5-Day Forcast
