@@ -32,20 +32,15 @@ function cityList (cityName) {
     delButton.textContent = "❌";
     delButton.setAttribute("id", "delete");
 
-//    $("button1").after("❌");
-
-   cityListName.appendChild(delButton); // This works, but...
+   cityListName.appendChild(delButton);
 }
 
 
 // Function for list button click event
 $(document).on("click", ".list-number", function(event) {
     event.preventDefault();
-    // console.log(event.target.textContent);
 
-    // var recallCity = event.target.textContent;
-
-    var recallCity = event.target.textContent.split("");  // Try this
+    var recallCity = event.target.textContent.split(""); 
     recallCity.length = recallCity.length;
 
     console.log(recallCity);
