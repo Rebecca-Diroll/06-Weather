@@ -27,31 +27,29 @@ function cityList (cityName) {
     cityListName.append(button1);
     savedCities.append(cityListName);
 
-    // var delButton = document.createElement("button");
-    // delButton.textContent = "❌";
-    // delButton.setAttribute("class", "delete");
 
-    // $("button1").after("❌");
+    var delButton = document.createElement("button");
+    delButton.textContent = "❌";
+    delButton.setAttribute("id", "delete");
 
-//    button1.appendChild(delButton); This works, but...
+//    $("button1").after("❌");
+
+   cityListName.appendChild(delButton); // This works, but...
 }
 
-// // Add delete button
-// function addDelBtn(button1) {
-//     console.log(button1);
-//     var delButton = document.createElement("button");
-//     delButton.textContent = "❌";
-//     delButton.setAttribute("class", "delete");
-//     button1.appendChild(delButton);
-// };
 
 // Function for list button click event
 $(document).on("click", ".list-number", function(event) {
     event.preventDefault();
-    console.log(event.target.textContent);
+    // console.log(event.target.textContent);
 
-    var recallCity = event.target.textContent;
-    clickableButtons(recallCity);
+    // var recallCity = event.target.textContent;
+
+    var recallCity = event.target.textContent.split("");  // Try this
+    recallCity.length = recallCity.length;
+
+    console.log(recallCity);
+    clickableButtons(recallCity.join(""));
 });
 
 // Function for list button delete
