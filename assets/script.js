@@ -60,6 +60,8 @@ $(document).on("click", "#saveBtn", function(event) {
 
     var saveCityName = $("#inputCityName").val();
 
+    document.querySelector("#inputCityName").value = '';
+
     clickableButtons(saveCityName);
 
     cityList(saveCityName);
@@ -106,8 +108,6 @@ function clickableButtons(inputCityName) {
 
             // 5-Day Forcast
             fiveDayForcast();
-
-//            document.querySelector("#inputCityName").textContent = "";
         });
 }
 
