@@ -60,17 +60,12 @@ $(document).on("click", "#delete", function(event) {
     $(this).parent().remove();
     const cityToDelete = $(this).parent().find(".list-number").text(); // <--- Here is the city we want to delete
 
-    // Citytodelete = Dayton
+    // Delete the chosen city from the array.
     // We have an array of cities: cityArray = ["Columbus", "Dayton", "Austin"]
     const cityIndex = cityArray.findIndex(city => city === cityToDelete); // 1
     cityArray.splice(cityIndex, 1);
     localStorage.setItem("cities", JSON.stringify(cityArray));
-
-
 })
-
-// function storeCities();
-// localStorage.setItem("")
 
 // Function for save button event
 $(document).on("click", "#saveBtn", function(event) {
@@ -233,8 +228,8 @@ function fiveDayForcast() {
             day1Icon.innerHTML = icon1Value;
 
             // Day 1 Temperature & Humidity
-            day1TempLow.innerHTML = tempLow1Value + " deg F";
-            day1TempHigh.innerHTML = tempHigh1Value + " deg F";
+            day1TempLow.innerHTML = tempLow1Value + " deg F low";
+            day1TempHigh.innerHTML = tempHigh1Value + " deg F high";
             day1Humidity.innerHTML = humidity1Value + "% humidity";
 
 
@@ -257,8 +252,8 @@ function fiveDayForcast() {
             day2Icon.innerHTML = icon2Value;
 
             // Day 2 Temperature & Humidity
-            day2TempLow.innerHTML = tempLow2Value + " deg F";
-            day2TempHigh.innerHTML = tempHigh2Value + " deg F";
+            day2TempLow.innerHTML = tempLow2Value + " deg F low";
+            day2TempHigh.innerHTML = tempHigh2Value + " deg F high";
             day2Humidity.innerHTML = humidity2Value + "% humidity";
 
 
@@ -281,8 +276,8 @@ function fiveDayForcast() {
             day3Icon.innerHTML = icon3Value;
 
             // Day 3 Temperature & Humidity
-            day3TempLow.innerHTML = tempLow3Value + " deg F";
-            day3TempHigh.innerHTML = tempHigh3Value + " deg F";
+            day3TempLow.innerHTML = tempLow3Value + " deg F low";
+            day3TempHigh.innerHTML = tempHigh3Value + " deg F high";
             day3Humidity.innerHTML = humidity3Value + "% humidity";
 
 
@@ -305,8 +300,8 @@ function fiveDayForcast() {
             day4Icon.innerHTML = icon4Value;
 
             // Day 4 Temperature & Humidity
-            day4TempLow.innerHTML = tempLow4Value + " deg F";
-            day4TempHigh.innerHTML = tempHigh4Value + " deg F";
+            day4TempLow.innerHTML = tempLow4Value + " deg F low";
+            day4TempHigh.innerHTML = tempHigh4Value + " deg F high";
             day4Humidity.innerHTML = humidity4Value + "% humidity";
 
 
@@ -330,8 +325,8 @@ function fiveDayForcast() {
 
             // Day 5 Temperature & Humidity
             day5Icon.innerHTML = icon5Value;
-            day5TempLow.innerHTML = tempLow5Value + " deg F";
-            day5TempHigh.innerHTML = tempHigh5Value + " deg F";
+            day5TempLow.innerHTML = tempLow5Value + " deg F low";
+            day5TempHigh.innerHTML = tempHigh5Value + " deg F high";
             day5Humidity.innerHTML = humidity5Value + "% humidity";
 
         });

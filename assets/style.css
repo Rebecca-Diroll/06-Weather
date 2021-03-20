@@ -149,12 +149,12 @@ button {
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
-    line-height: 1.2;
+    line-height: 2;
 }
 
-.icon, .icon1, .icon2, .icon3, .icon4, .icon5 {
+/* .icon, .icon1, .icon2, .icon3, .icon4, .icon5 {
     line-height: 1;
-}
+} */
 
 .tempTodayFahrenheit, .humidityToday, .windSpeedToday, .dayDate,
 .day1TempLow, .day1TempHigh, .day1Humidity
@@ -162,7 +162,7 @@ button {
 .day3TempLow, .day3TempHigh, .day3Humidity
 .day4TempLow, .day4TempHigh, .day4Humidity
 .day5TempLow, .day5TempHigh, .day5Humidity {
-    line-height: 2;
+    line-height: 30px;
 }
 
 .day1Date, .day2Date, .day3Date, .day4Date, .day5Date, 
