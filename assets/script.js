@@ -11,10 +11,19 @@ var savedCities = document.querySelector("#savedCities");
 var lat = document.querySelector("#lat");
 var lon = document.querySelector("#lon");
 var button1;
+var cityArray = JSON.parse(localStorage.getItem("cities")) || [];
 
 // Today's date
 var dateToday = moment();
 $("#dateToday").text(dateToday.format("ddd, MMM Do, YYYY"));
+
+// ["Columbus", "Dayton", "Akron"]
+if (cityArray) {
+    cityArray.forEach(cityName => {
+        cityList(cityName)
+    })
+}
+
 
 // City Search
 function cityList (cityName) {
@@ -35,23 +44,33 @@ function cityList (cityName) {
    cityListName.appendChild(delButton);
 }
 
-
 // Function for list button click event
 $(document).on("click", ".list-number", function(event) {
     event.preventDefault();
 
-    var recallCity = event.target.textContent.split(""); 
-    recallCity.length = recallCity.length;
+    var recallCity = event.target.textContent; 
 
     console.log(recallCity);
-    clickableButtons(recallCity.join(""));
+    clickableButtons(recallCity);
 });
 
 // Function for list button delete
 $(document).on("click", "#delete", function(event) {
     event.preventDefault();
     $(this).parent().remove();
+    const cityToDelete = $(this).parent().find(".list-number").text(); // <--- Here is the city we want to delete
+
+    // Citytodelete = Dayton
+    // We have an array of cities: cityArray = ["Columbus", "Dayton", "Austin"]
+    const cityIndex = cityArray.findIndex(city => city === cityToDelete); // 1
+    cityArray.splice(cityIndex, 1);
+    localStorage.setItem("cities", JSON.stringify(cityArray));
+
+
 })
+
+// function storeCities();
+// localStorage.setItem("")
 
 // Function for save button event
 $(document).on("click", "#saveBtn", function(event) {
@@ -59,11 +78,12 @@ $(document).on("click", "#saveBtn", function(event) {
     console.log($("#inputCityName").val());
 
     var saveCityName = $("#inputCityName").val();
-
     document.querySelector("#inputCityName").value = '';
 
-    clickableButtons(saveCityName);
+    cityArray.push(saveCityName);
+    localStorage.setItem("cities", JSON.stringify(cityArray));
 
+    clickableButtons(saveCityName);
     cityList(saveCityName);
 });
 
