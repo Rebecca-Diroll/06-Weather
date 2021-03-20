@@ -7,20 +7,10 @@ After the user inputs the name of a city, it is added to a list.
 Any city from the list may be selected as a search input.
 
 The current weather includes:
-City
-Date
-Weather Icon
-Temperature (Fahrenheit)
-Humidity
-Wind Speed (mph)
-Ultraviolet Index (with color coded alert bands)
+City, Date, Weather Icon, Temperature (Fahrenheit), Humidity, Wind Speed (mph), and Ultraviolet Index (with color coded alert bands).
 
 The five-day forcast includes:
-Date
-Weather Icon
-Minimum Temperature
-Maximum Temperature
-Humidity
+Date, Weather Icon, Minimum Temperature, Maximum Temperature, and Humidity.
 
 The application can be found at the following website: https://rebecca-diroll.github.io/06-Weather/
 
